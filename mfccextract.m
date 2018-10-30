@@ -1,8 +1,8 @@
-function mfccfile = mfccextract(filename,sr)
+function mfccfile = mfccextract(filename)
 % This function takes all 26 second FsReq (Hz) .wav files 
 % and returns .mfcc file of MFCC feature vectors
 % to be used with HTK
-FsReq = sr;   % set the sampling frequency (Hz)
+FsReq = 256000;   % set the sampling frequency (Hz)
 frameMs = 25; % set the frame size (ms)
 
 N = (FsReq/1000)*frameMs; % # of samples in each frame
@@ -25,7 +25,7 @@ y =(  y' * diag(hamming(Fs))  )';  % apply hamming window
 dim = size(y);                     % get dimensions of frame matrix
 numFrames = dim(2);                % get number of frames
 J = zeros(12,numFrames);           % matrix J for MFCC feature vectors
-    
+
 for frame = 1:numFrames   
     ps = magSpec(y(:,frame));      % get power spectrum vector       
     ev = filterbank(ps,H1,M);      % get energy vector from filterbank      
