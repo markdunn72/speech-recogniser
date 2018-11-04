@@ -21,7 +21,6 @@ for k = 3:length(D)
         end
         cd('..');    
     end
-disp('\nProcess completed.');
 cd('..');
 cd('..');
 end
