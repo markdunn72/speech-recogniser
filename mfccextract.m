@@ -1,47 +1,48 @@
 function mfccfile = mfccextract(filename)
-% This function takes all 26 second FsReq (Hz) .wav files 
-% and returns .mfcc file of MFCC feature vectors
-% to be used with HTK
-FsReq = 256000;   % set the sampling frequency (Hz)
-frameMs = 25; % set the frame size (ms)
+% parameters: filename of input audio file 
+% returns:    fixed length acoustic MFCC vectors
 
-N = (FsReq/1000)*frameMs; % # of samples in each frame
+[y,Fs] = audioread(filename); % get signal & sample rate of input file
+ySize = length(y);            % get length of signal
 
-% ------ Mel-scale filterbank ------ %
-hz2mel = @(hz)(1125*log(1+hz/700)); % Hertz to mel warping
-mel2hz = @(mel)(700*exp(mel/1125)-700); % mel to Hertz warping
-K = 257; % length of each filter vector
-M = 26; % number of filters - SET HERE
-[H1,~] = trifbank(M,K,[0 FsReq/2],FsReq,hz2mel,mel2hz);
+% --------- Configuration ---------- %
+fDur = 25;                % frame duration (ms)
+fSDur = 10;               % frame step     (ms)
+fSize = (Fs/1000)*fDur;   % frame length
+fStep = (Fs/1000)*fSDur;  % frame step length
+fN = 1;                   % number of frames in y
+while fN+fSize <= ySize
+    fN = fN+fStep;
+end
 % ---------------------------------- %
 
-[y,Fs] = audioread(filename);      % get signal, sample rate of wav file
-if Fs ~= FsReq                     % check wav file is correct sample rate    
-    y = resampleaudio(y,Fs,FsReq); % resample to required sample rate 
-end    
-y = preemphasis(y);                % apply preemphasis to signal
-y = buffer(y,Fs,Fs/2);             % divide into 50% overlapped frames
-y =(  y' * diag(hamming(Fs))  )';  % apply hamming window
-dim = size(y);                     % get dimensions of frame matrix
-numFrames = dim(2);                % get number of frames
-J = zeros(12,numFrames);           % matrix J for MFCC feature vectors
+% ------ Mel-scale filterbank ------ %
+hz2mel = @(hz)(1125*log(1+hz/700));     % Hertz to mel warping
+mel2hz = @(mel)(700*exp(mel/1125)-700); % mel to Hertz warping
+K = 257;                                % length of each filter vector
+M = 26;                                 % number of filters - SET HERE
+[H1,~] = trifbank(M,K,[0 Fs/2],Fs,hz2mel,mel2hz);
+% ---------------------------------- %
 
-for frame = 1:numFrames   
-    ps = magSpec(y(:,frame));      % get power spectrum vector       
+y = preemphasis(y);                % apply preemphasis to signal
+
+F = zeros(12,fN);                  % matrix F for MFCC feature vectors
+fC = 1;                            % frame count
+i = 1;                             % signal index
+
+while i+fSize-1 <= ySize           % for each frame
+    ps = spectral(y(i:i+fSize-1)); % get spectral domain  
     ev = filterbank(ps,H1,M);      % get energy vector from filterbank      
     ev = log(ev);                  % take log of each filter energy    
-    fv = dcttrunc(ev);             % take dct and truncate feature vector
+    fv = cepstral(ev);             % get cepstral coefficients
     %fve = loge(fv);               % add log energy component
-    J(:,frame) = fv;               % store feature vector of each frame     
+    F(:,fC) = fv;                  % store feature vector
+    fC = fC+1;                     % increment frame count
+    i = i+1;                       % increment signal index
 end 
 
-mfccfile = writemfcc(J,filename,...
-    frameMs);                      % write feature vectors to .mfcc file   
-end
-
-function ynew = resampleaudio(y,Fs,FsReq)
-[P,Q] = rat(FsReq/Fs);
-ynew = resample(y,P,Q);
+mfccfile = writemfcc(F,filename,...
+    fSize);                        % write feature vectors to .mfcc file   
 end
 
 function sigout = preemphasis(y)
@@ -52,7 +53,7 @@ b = [1 -0.95];
 sigout = filter(b,1,y);       % high-pass filter
 end
 
-function ps = magSpec(frame)
+function ps = spectral(frame)
 % This function returns a 257 point 
 % 1 sided estimated power spectral
 % density of a column vector
@@ -76,11 +77,11 @@ for filter = 1:M
 end
 end
 
-function fv = dcttrunc(ev)
+function fv = cepstral(ev)
 % This function takes the discrete cosine transform
 % of an energy vector and removes the pitch-related
 % quefrencies with truncation
-ev = dct(ev);  % take DCT of ev to get cepstral domain
+ev = fft(ev);  % take DCT of ev to get cepstral domain
 fv = ev(1:12); % take first 12 points to get MFCC feature vector
 end
 
