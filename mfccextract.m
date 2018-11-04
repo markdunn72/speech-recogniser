@@ -1,16 +1,17 @@
 function mfccfile = mfccextract(filename)
 % parameters: filename of input audio file 
-% returns:    fixed length acoustic MFCC vectors
+% returns:    MFCC file
 
 [y,Fs] = audioread(filename); % get signal & sample rate of input file
 ySize = length(y);            % get length of signal
 
 % --------- Configuration ---------- %
+disp('Analyzing signal...')
 fDur = 25;                % frame duration (ms)
 fSDur = 10;               % frame step     (ms)
 fSize = (Fs/1000)*fDur;   % frame length
 fStep = (Fs/1000)*fSDur;  % frame step length
-fN = 1;                   % number of frames in y
+fN = 1;                   % max # of frames in signal
 while fN+fSize <= ySize
     fN = fN+fStep;
 end
@@ -21,9 +22,11 @@ hz2mel = @(hz)(1125*log(1+hz/700));     % Hertz to mel warping
 mel2hz = @(mel)(700*exp(mel/1125)-700); % mel to Hertz warping
 K = 257;                                % length of each filter vector
 M = 26;                                 % number of filters - SET HERE
-[H1,~] = trifbank(M,K,[0 Fs/2],Fs,hz2mel,mel2hz);
+[FB,~] = trifbank(M,K,[0 Fs/2],Fs,hz2mel,mel2hz);
 % ---------------------------------- %
 
+% ------- Signal processing -------- %
+disp('Processing signal...')
 y = preemphasis(y);                % apply preemphasis to signal
 
 F = zeros(12,fN);                  % matrix F for MFCC feature vectors
@@ -32,15 +35,17 @@ i = 1;                             % signal index
 
 while i+fSize-1 <= ySize           % for each frame
     ps = spectral(y(i:i+fSize-1)); % get spectral domain  
-    ev = filterbank(ps,H1,M);      % get energy vector from filterbank      
+    ev = filterbank(ps,FB,M);      % get energy vector from filterbank      
     ev = log(ev);                  % take log of each filter energy    
     fv = cepstral(ev);             % get cepstral coefficients
     %fve = loge(fv);               % add log energy component
     F(:,fC) = fv;                  % store feature vector
     fC = fC+1;                     % increment frame count
     i = i+1;                       % increment signal index
-end 
+end
+% ---------------------------------- %
 
+disp('Writing file...')
 mfccfile = writemfcc(F,filename,...
     fSize);                        % write feature vectors to .mfcc file   
 end
@@ -48,7 +53,6 @@ end
 function sigout = preemphasis(y)
 % This function applies pre emphasis to
 % a time-domain signal, returns signal
-%sigout = sum(y,2)/size(y,2); % convert stereo signal to mono
 b = [1 -0.95];
 sigout = filter(b,1,y);       % high-pass filter
 end
@@ -85,17 +89,17 @@ ev = fft(ev);  % take DCT of ev to get cepstral domain
 fv = ev(1:12); % take first 12 points to get MFCC feature vector
 end
 
-function fve =  loge(fv)
+function fve = loge(fv)
 % This function returns the feature vector with
 % log energy component
 [N,~] = size(fv);
 ec = (sum(fv))^2; % calculate energy component
-lec = log(ec);  % take log of ec
+lec = log(ec);    % take log of ec
 fve = zeros(N+1,1);
 for i = 1:N
     fve(i) = fv(i);
 end
-fve(N+1) = lec; % append energy components
+fve(N+1) = lec;   % append energy components
 end
 
 function mfccfile = writemfcc(J,filename,ms)
