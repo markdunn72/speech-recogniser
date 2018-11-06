@@ -12,9 +12,12 @@ fSDur = 10;               % frame step     (ms)
 fSize = (Fs/1000)*fDur;   % frame length
 fStep = (Fs/1000)*fSDur;  % frame step length
 fN = 1;                   % max # of frames in signal
-while fN+fSize <= ySize
-    fN = fN+fStep;
+i = 1;      
+while i+fSize-1 <= ySize
+    i = i+fStep;
+    fN = fN+1;
 end
+fN = fN-1;
 % ---------------------------------- %
 
 % ------ Mel-scale filterbank ------ %
@@ -30,18 +33,17 @@ disp('Processing signal...')
 y = preemphasis(y);                % apply preemphasis to signal
 
 F = zeros(12,fN);                  % matrix F for MFCC feature vectors
-fC = 1;                            % frame count
-i = 1;                             % signal index
+i = 1;                             % signal start index
 
-while i+fSize-1 <= ySize           % for each frame
-    ps = spectral(y(i:i+fSize-1)); % get spectral domain  
+for f = 1:fN                       % for each frame
+    iEnd = i+fSize-1;              % get end index
+    ps = spectral(y(i:iEnd));      % get spectral domain  
     ev = filterbank(ps,FB,M);      % get energy vector from filterbank      
     ev = log(ev);                  % take log of each filter energy    
     fv = cepstral(ev);             % get cepstral coefficients
     %fve = loge(fv);               % add log energy component
-    F(:,fC) = fv;                  % store feature vector
-    fC = fC+1;                     % increment frame count
-    i = i+1;                       % increment signal index
+    F(:,f) = fv;                   % store feature vector
+    i = i+fStep;                   % step signal start index
 end
 % ---------------------------------- %
 
@@ -108,7 +110,7 @@ function mfccfile = writemfcc(J,filename,ms)
 mfccfile = strcat(filename(1:end-4),'.mfcc'); % create new filename
 [vecDims,nSamples] = size(J);
 sampPeriod = (ms/2)*10000;  % convert ms to 100ns
-parmKind = 6;               % sample kind is MFCC
+parmKind = 9;               % sample kind is USER
 sampSize = 4*12;            % 12 4-byte float values 
 % Open file for writing:
 fid = fopen(mfccfile, 'w', 'ieee-be');

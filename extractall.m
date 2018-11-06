@@ -1,5 +1,8 @@
-function extracted = extractall()
-fDir = 'data/recordings';
+function extracted = extractall(fDir)
+% This function runs mfccextract on all wav files
+% in fDir
+% returns true if any wav file found else false
+sDir = pwd;
 cd(fDir);
 D = dir;
 extracted = false;
@@ -21,6 +24,5 @@ for k = 3:length(D)
         end
         cd('..');    
     end
-cd('..');
-cd('..');
+cd(sDir);
 end
