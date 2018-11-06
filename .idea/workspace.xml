@@ -3,6 +3,26 @@
   <component name="ChangeListManager">
     <list default="true" id="6b985cbf-d939-4df6-afbf-545b13ff4833" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/MFCCs/test/adrian.mfcc" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/MFCCs/test/adrian.mfcc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/MFCCs/test/ali.mfcc" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/MFCCs/test/ali.mfcc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/MFCCs/test/andrew.mfcc" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/MFCCs/test/andrew.mfcc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/MFCCs/test/andy.mfcc" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/MFCCs/test/andy.mfcc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/MFCCs/test/ce.mfcc" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/MFCCs/test/ce.mfcc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/MFCCs/test/chaorong.mfcc" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/MFCCs/test/chaorong.mfcc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/MFCCs/test/jeremy.mfcc" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/MFCCs/test/jeremy.mfcc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/MFCCs/test/ke.mfcc" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/MFCCs/test/ke.mfcc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/MFCCs/test/liam.mfcc" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/MFCCs/test/liam.mfcc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/MFCCs/test/martinho.mfcc" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/MFCCs/test/martinho.mfcc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/MFCCs/test/mateusz.mfcc" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/MFCCs/test/mateusz.mfcc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/MFCCs/test/minghong.mfcc" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/MFCCs/test/minghong.mfcc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/MFCCs/test/nicholas.mfcc" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/MFCCs/test/nicholas.mfcc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/MFCCs/test/nicole.mfcc" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/MFCCs/test/nicole.mfcc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/MFCCs/test/oliver.mfcc" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/MFCCs/test/oliver.mfcc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/MFCCs/test/sarah.mfcc" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/MFCCs/test/sarah.mfcc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/MFCCs/test/shaun.mfcc" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/MFCCs/test/shaun.mfcc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/MFCCs/test/travis.mfcc" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/MFCCs/test/travis.mfcc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/MFCCs/test/vincent.mfcc" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/MFCCs/test/vincent.mfcc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/MFCCs/test/vinny.mfcc" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/MFCCs/test/vinny.mfcc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ASR/MFCCs/train/adrian.mfcc" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/MFCCs/train/adrian.mfcc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ASR/MFCCs/train/ali.mfcc" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/MFCCs/train/ali.mfcc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ASR/MFCCs/train/andrew.mfcc" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/MFCCs/train/andrew.mfcc" afterDir="false" />
@@ -23,8 +43,69 @@
       <change beforePath="$PROJECT_DIR$/ASR/MFCCs/train/travis.mfcc" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/MFCCs/train/travis.mfcc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ASR/MFCCs/train/vincent.mfcc" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/MFCCs/train/vincent.mfcc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ASR/MFCCs/train/vinny.mfcc" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/MFCCs/train/vinny.mfcc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/labels/test/adrian.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/test/adrian.lab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/labels/test/ali.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/test/ali.lab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/labels/test/andrew.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/test/andrew.lab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/labels/test/andy.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/test/andy.lab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/labels/test/ce.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/test/ce.lab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/labels/test/chaorong.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/test/chaorong.lab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/labels/test/jeremy.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/test/jeremy.lab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/labels/test/ke.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/test/ke.lab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/labels/test/liam.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/test/liam.lab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/labels/test/martinho.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/test/martinho.lab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/labels/test/mateusz.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/test/mateusz.lab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/labels/test/minghong.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/test/minghong.lab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/labels/test/nicholas.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/test/nicholas.lab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/labels/test/nicole.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/test/nicole.lab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/labels/test/oliver.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/test/oliver.lab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/labels/test/sarah.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/test/sarah.lab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/labels/test/shaun.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/test/shaun.lab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/labels/test/travis.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/test/travis.lab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/labels/test/vincent.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/test/vincent.lab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/labels/test/vinny.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/test/vinny.lab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/labels/train/adrian.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/train/adrian.lab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/labels/train/ali.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/train/ali.lab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/labels/train/andrew.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/train/andrew.lab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/labels/train/andy.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/train/andy.lab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/labels/train/ce.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/train/ce.lab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/labels/train/chaorong.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/train/chaorong.lab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/labels/train/jeremy.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/train/jeremy.lab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/labels/train/ke.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/train/ke.lab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/labels/train/liam.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/train/liam.lab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/labels/train/martinho.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/train/martinho.lab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/labels/train/mateusz.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/train/mateusz.lab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/labels/train/minghong.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/train/minghong.lab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/labels/train/nicholas.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/train/nicholas.lab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/labels/train/nicole.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/train/nicole.lab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/labels/train/oliver.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/train/oliver.lab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/labels/train/sarah.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/train/sarah.lab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/labels/train/shaun.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/train/shaun.lab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/labels/train/travis.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/train/travis.lab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/labels/train/vincent.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/train/vincent.lab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/labels/train/vinny.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/train/vinny.lab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/lists/testList.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/lists/testList.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/lists/trainList.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/lists/trainList.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build_asr.py" beforeDir="false" afterPath="$PROJECT_DIR$/build_asr.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/test/test.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/test/recordings/ADRIAN/adrian.mfcc" beforeDir="false" afterPath="$PROJECT_DIR$/data/test/recordings/ADRIAN/adrian.mfcc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/test/recordings/ALI/ali.mfcc" beforeDir="false" afterPath="$PROJECT_DIR$/data/test/recordings/ALI/ali.mfcc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/test/recordings/ANDREW/andrew.mfcc" beforeDir="false" afterPath="$PROJECT_DIR$/data/test/recordings/ANDREW/andrew.mfcc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/test/recordings/ANDY/andy.mfcc" beforeDir="false" afterPath="$PROJECT_DIR$/data/test/recordings/ANDY/andy.mfcc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/test/recordings/CE/ce.mfcc" beforeDir="false" afterPath="$PROJECT_DIR$/data/test/recordings/CE/ce.mfcc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/test/recordings/CHAORONG/chaorong.mfcc" beforeDir="false" afterPath="$PROJECT_DIR$/data/test/recordings/CHAORONG/chaorong.mfcc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/test/recordings/JEREMY/jeremy.mfcc" beforeDir="false" afterPath="$PROJECT_DIR$/data/test/recordings/JEREMY/jeremy.mfcc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/test/recordings/KE/ke.mfcc" beforeDir="false" afterPath="$PROJECT_DIR$/data/test/recordings/KE/ke.mfcc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/test/recordings/LIAM/liam.mfcc" beforeDir="false" afterPath="$PROJECT_DIR$/data/test/recordings/LIAM/liam.mfcc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/test/recordings/MARTINHO/martinho.mfcc" beforeDir="false" afterPath="$PROJECT_DIR$/data/test/recordings/MARTINHO/martinho.mfcc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/test/recordings/MATEUSZ/mateusz.mfcc" beforeDir="false" afterPath="$PROJECT_DIR$/data/test/recordings/MATEUSZ/mateusz.mfcc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/test/recordings/MINGHONG/minghong.mfcc" beforeDir="false" afterPath="$PROJECT_DIR$/data/test/recordings/MINGHONG/minghong.mfcc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/test/recordings/NICHOLAS/nicholas.mfcc" beforeDir="false" afterPath="$PROJECT_DIR$/data/test/recordings/NICHOLAS/nicholas.mfcc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/test/recordings/NICOLE/nicole.mfcc" beforeDir="false" afterPath="$PROJECT_DIR$/data/test/recordings/NICOLE/nicole.mfcc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/test/recordings/OLIVER/oliver.mfcc" beforeDir="false" afterPath="$PROJECT_DIR$/data/test/recordings/OLIVER/oliver.mfcc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/test/recordings/SARAH/sarah.mfcc" beforeDir="false" afterPath="$PROJECT_DIR$/data/test/recordings/SARAH/sarah.mfcc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/test/recordings/SHAUN/shaun.mfcc" beforeDir="false" afterPath="$PROJECT_DIR$/data/test/recordings/SHAUN/shaun.mfcc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/test/recordings/TRAVIS/travis.mfcc" beforeDir="false" afterPath="$PROJECT_DIR$/data/test/recordings/TRAVIS/travis.mfcc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/test/recordings/VINCENT/vincent.mfcc" beforeDir="false" afterPath="$PROJECT_DIR$/data/test/recordings/VINCENT/vincent.mfcc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/test/recordings/VINNY/vinny.mfcc" beforeDir="false" afterPath="$PROJECT_DIR$/data/test/recordings/VINNY/vinny.mfcc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/train/recordings/ADRIAN/adrian.mfcc" beforeDir="false" afterPath="$PROJECT_DIR$/data/train/recordings/ADRIAN/adrian.mfcc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/train/recordings/ALI/ali.mfcc" beforeDir="false" afterPath="$PROJECT_DIR$/data/train/recordings/ALI/ali.mfcc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/train/recordings/ANDREW/andrew.mfcc" beforeDir="false" afterPath="$PROJECT_DIR$/data/train/recordings/ANDREW/andrew.mfcc" afterDir="false" />
@@ -46,6 +127,7 @@
       <change beforePath="$PROJECT_DIR$/data/train/recordings/VINCENT/vincent.mfcc" beforeDir="false" afterPath="$PROJECT_DIR$/data/train/recordings/VINCENT/vincent.mfcc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/train/recordings/VINNY/vinny.mfcc" beforeDir="false" afterPath="$PROJECT_DIR$/data/train/recordings/VINNY/vinny.mfcc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/extractall.m" beforeDir="false" afterPath="$PROJECT_DIR$/extractall.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinit_all.sh" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/mfccextract.m" beforeDir="false" afterPath="$PROJECT_DIR$/mfccextract.m" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -68,24 +150,26 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="2" />
+          <entry key="m" value="1" />
+          <entry key="py" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="2" />
+          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="Python" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="9" />
-          <entry key="py" value="2587" />
+          <entry key="py" value="3495" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="9" />
-          <entry key="Python" value="2587" />
+          <entry key="Python" value="3495" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -96,8 +180,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/build_asr.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="245">
-              <caret line="63" column="16" selection-start-line="63" selection-start-column="16" selection-end-line="63" selection-end-column="16" />
+            <state relative-caret-position="320">
+              <caret line="96" column="29" lean-forward="true" selection-start-line="96" selection-start-column="29" selection-end-line="96" selection-end-column="29" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -152,6 +236,12 @@
               <item name="CW1" type="b2602c69:ProjectViewProjectNode" />
               <item name="CW1" type="462c0819:PsiDirectoryNode" />
               <item name="ASR" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CW1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CW1" type="462c0819:PsiDirectoryNode" />
+              <item name="ASR" type="462c0819:PsiDirectoryNode" />
+              <item name="labels" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -231,7 +321,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2374798" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3990307" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -249,10 +339,20 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/fextract.py" />
+    <entry file="file://$PROJECT_DIR$/extractall.m">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file:///usr/local/Cellar/python/3.7.0/Frameworks/Python.framework/Versions/3.7/lib/python3.7/shutil.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="121" selection-start-line="121" selection-end-line="121" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/build_asr.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="63" column="16" selection-start-line="63" selection-start-column="16" selection-end-line="63" selection-end-column="16" />
+        <state relative-caret-position="320">
+          <caret line="96" column="29" lean-forward="true" selection-start-line="96" selection-start-column="29" selection-end-line="96" selection-end-column="29" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>

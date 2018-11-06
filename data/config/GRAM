@@ -1,0 +1,9 @@
+$word = adrian | ali | andrew | andy | ce 
+| chaorong | jeremy | ke | liam | martinho | mateusz 
+| minghong | nicholas | nicole | oliver | sarah
+| shaun | travis | vincent | vinny ;
+
+( [sil] < $word >  [sil])
+
+
+

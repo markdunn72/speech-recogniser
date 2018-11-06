@@ -1,4 +1,4 @@
-function mfccfile = mfccextract(filename)
+function mfccextract(filename)
 % parameters: filename of input audio file 
 % returns:    MFCC file
 
@@ -48,8 +48,10 @@ end
 % ---------------------------------- %
 
 disp('Writing file...')
-mfccfile = writemfcc(F,filename,...
-    fSize);                        % write feature vectors to .mfcc file   
+
+writehtk_lite(strcat(filename(1:end-4),'.mfcc'), F.', fSDur*1E-3, 9);
+%mfccfile = writemfcc(F,filename, fSize); % write feature vectors to .mfcc file   
+
 end
 
 function sigout = preemphasis(y)
@@ -104,30 +106,6 @@ end
 fve(N+1) = lec;   % append energy components
 end
 
-function mfccfile = writemfcc(J,filename,ms)
-% This function writes a matrix of MFCC feature vectors
-% to the HTK file format .mfcc
-mfccfile = strcat(filename(1:end-4),'.mfcc'); % create new filename
-[vecDims,nSamples] = size(J);
-sampPeriod = (ms/2)*10000;  % convert ms to 100ns
-parmKind = 9;               % sample kind is USER
-sampSize = 4*12;            % 12 4-byte float values 
-% Open file for writing:
-fid = fopen(mfccfile, 'w', 'ieee-be');
-% Write the header information
-fwrite(fid,nSamples,'int32');   % number of vectors in file (4 byteint)
-fwrite(fid,sampPeriod,'int32'); % sample period in 100ns units (4 byte int)
-fwrite(fid,sampSize,'int16');   % number of bytes per sample (2 byte int)
-fwrite(fid,parmKind,'int16');   % code for the sample kind (2 byte int)
-% Write the data: one coefficient at a time:
-for i = 1:nSamples     
-   for j = 1:vecDims    
-     fwrite(fid, J(j, i), 'float32');    
-   end
-end
-% close the file
-fclose(fid);
-end
     
 function [ H, f, c ] = trifbank( M, K, R, fs, h2w, w2h )
 % TRIFBANK Triangular filterbank.
@@ -230,4 +208,81 @@ function [ H, f, c ] = trifbank( M, K, R, fs, h2w, w2h )
     % H = H./repmat(trapz(f,H,2),1,K); % normalize to unit area (inherently done)
 end
 
-%%% EOF
+
+function mfccfile = writemfcc(J,filename,fSize)
+% This function writes a matrix of MFCC feature vectors
+% to the HTK file format .mfcc
+mfccfile = strcat(filename(1:end-4),'.mfcc'); % create new filename
+[vecDims,nSamples] = size(J);
+sampPeriod = (fSize/2)*10000; % convert ms to 100ns
+parmKind = 6;                 % sample kind is MFCC
+sampSize = 4*vecDims;         % 12 4-byte float values 
+% Open file for writing:
+fid = fopen(mfccfile, 'w', 'ieee-be');
+% Write the header information
+fwrite(fid,nSamples,'int32');   % number of vectors in file (4 byteint)
+fwrite(fid,sampPeriod,'int32'); % sample period in 100ns units (4 byte int)
+fwrite(fid,sampSize,'int16');   % number of bytes per sample (2 byte int)
+fwrite(fid,parmKind,'int16');   % code for the sample kind (2 byte int)
+% Write the data: one coefficient at a time:
+for i = 1:nSamples     
+   for j = 1:vecDims    
+     fwrite(fid, J(j, i), 'float32');    
+   end
+end
+% close the file
+fclose(fid);
+end
+
+function writehtk_lite( filename, features, sampPeriod, parmKind )
+% WRITEHTK_LITE Simple routine for writing HTK feature files.
+%
+%   WRITEHTK_LITE( FILENAME, FEATURES, SAMPPERIOD, PARMKIND )
+%   writes FEATURES to HTK [1] feature file specified by FILENAME,
+%   with sample period (s) defined in SAMPPERIOD and parameter kind
+%   in PARAMKIND. Note that this function provides a trivial 
+%   implementation with limited functionality. For fully featured 
+%   support of HTK I/O refer for example to the VOICEBOX toolbox [2].
+%   
+%   Inputs
+%           FILENAME is a filename as string for a HTK feature file
+%
+%           FEATURES is a feature matrix with feature vectors 
+%           as rows and feature dimensions as columns
+%
+%           SAMPPERIOD is a sample period (s)
+%
+%           PARMKIND is a code indicating a sample kind
+%           (see Sec. 5.10.1 of [1], pp. 80-81)
+%
+%   Example
+%           % write features to sp10_htk.mfc file with sample period 
+%           % set to 10 ms and feature type specified as MFCC_0
+%           readhtk_lite( 'sp10_htk.mfc', features, 10E-3, 6+8192 );
+%
+%   References
+%
+%           [1] Young, S., Evermann, G., Gales, M., Hain, T., Kershaw, D., 
+%               Liu, X., Moore, G., Odell, J., Ollason, D., Povey, D., 
+%               Valtchev, V., Woodland, P., 2006. The HTK Book (for HTK 
+%               Version 3.4.1). Engineering Department, Cambridge University.
+%               (see also: http://htk.eng.cam.ac.uk)
+%
+%           [2] VOICEBOX: MATLAB toolbox for speech processing by Mike Brookes
+%               url: http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/voicebox.html
+%   Author: Kamil Wojcicki, September 2011
+    mfcfile = fopen( filename, 'w', 'b' );
+    [ nSamples, sampSize ] = size( features );
+    
+    fwrite( mfcfile, nSamples, 'int32' );
+    fwrite( mfcfile, sampPeriod*1E7, 'int32' );
+    fwrite( mfcfile, 4*sampSize, 'int16' );
+    fwrite( mfcfile, parmKind, 'int16' );
+    
+    count = fwrite( mfcfile, features.', 'float' );
+    fclose( mfcfile );
+    if count~=nSamples*sampSize
+        error( sprintf('write_HTK_file: count!=nSamples*sampSize (%i!=%i), filename: %s', count, nSamples*sampSize, filename)); 
+    end
+end
+% EOF

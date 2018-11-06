@@ -24,8 +24,10 @@ DICT = '''adrian adrian\nali ali\nandrew andrew\nandy andy\nce ce\nchaorong chao
 GRAM = '''
           '''
 
+CONFIG_DATA = 'data/config/'
 TRAIN_DATA = 'data/train/recordings'
 TEST_DATA = 'data/test/recordings'
+
 
 
 # build new directory tree
@@ -44,7 +46,7 @@ for root, dirs, files in os.walk(TRAIN_DATA):
         fpath = '/' + file
         if file.endswith('.mfcc'):
             shutil.copyfile(root + fpath, DIRS['MFCC_TRAIN'] + fpath)
-            trainlist.append(DIRS['MFCC_TRAIN'][3:] + fpath)
+            trainlist.append(DIRS['MFCC_TRAIN'][4:] + fpath)
         if file.endswith('.lab'):
             shutil.copyfile(root + fpath, DIRS['LAB_TRAIN'] + fpath)
 
@@ -61,10 +63,36 @@ for root, dirs, files in os.walk(TEST_DATA):
         fpath = '/' + file
         if file.endswith('.mfcc'):
             shutil.copyfile(root + fpath, DIRS['MFCC_TEST'] + fpath)
-            testlist.append(DIRS['MFCC_TEST'][3:] + fpath)
+            testlist.append(DIRS['MFCC_TEST'][4:] + fpath)
         if file.endswith('.lab'):
             shutil.copyfile(root + fpath, DIRS['LAB_TEST'] + fpath)
 
 f = open(DIRS['LISTS'] + '/testList.txt', 'w+')
 [f.write(file + '\n') for file in testlist]
 f.close()
+
+# copy hmm prototype file
+proto = 'proto4States.txt'
+shutil.copyfile(CONFIG_DATA + proto, DIRS['LIB'] + '/' + proto)
+
+# copy hinit shell command
+hinitsh = 'hinit_all.sh'
+shutil.copyfile(CONFIG_DATA + hinitsh, DIRS['ASR'] + '/' + hinitsh)
+
+# copy GRAM, NET, dict, words4, words3, wdnet
+files = ['GRAM', 'NET', 'dict', 'words4', 'words3', 'wdnet']
+[shutil.copyfile(CONFIG_DATA + file, DIRS['LIB'] + '/' + file) for file in files]
+
+# lower case all labels
+def lowerfiles(directory):
+    for filename in os.listdir(directory):
+        if filename.endswith('.lab'):
+            f = open(directory + '/' + filename, 'r')
+            text = f.read()
+
+            lines = [line.lower() for line in text]
+            with open(directory + '/' + filename, 'w') as out:
+                out.writelines(lines)
+
+lowerfiles(DIRS['LAB_TRAIN'])
+lowerfiles(DIRS['LAB_TEST'])

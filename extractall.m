@@ -1,6 +1,6 @@
 function extracted = extractall(fDir)
 % This function runs mfccextract on all wav files
-% in fDir
+% in directories within fDir
 % returns true if any wav file found else false
 sDir = pwd;
 cd(fDir);

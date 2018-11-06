@@ -1,0 +1,12 @@
+extractall('data/train/recordings');
+extractall('data/test/recordings');
+
+python3 build_asr.py
+
+cd asr
+sh hinit_all.sh
+cd ..
+
+HVite -T 1 -S lists/testList.txt -d hmms/ -w lib/NET -l results lib/dict lib/words3
+
+HResults -p -e "???" sil -e "???" sp -L labels/test lib/words3 results/*.rec
