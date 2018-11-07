@@ -7,8 +7,8 @@ ySize = length(y);            % get length of signal
 
 % --------- Configuration ---------- %
 disp('Analyzing signal...')
-fDur = 25;                % frame duration (ms)
-fSDur = 10;               % frame step     (ms)
+fDur = 60;                % frame duration (ms)
+fSDur = 36;               % frame step     (ms)
 fSize = (Fs/1000)*fDur;   % frame length
 fStep = (Fs/1000)*fSDur;  % frame step length
 fN = 1;                   % max # of frames in signal
@@ -41,14 +41,14 @@ for f = 1:fN                       % for each frame
     ev = filterbank(ps,FB,M);      % get energy vector from filterbank      
     ev = log(ev);                  % take log of each filter energy    
     fv = cepstral(ev);             % get cepstral coefficients
-    %fve = loge(fv);               % add log energy component
+    %fve = loge(fv);                % add log energy component
     F(:,f) = fv;                   % store feature vector
     i = i+fStep;                   % step signal start index
 end
 % ---------------------------------- %
 
 disp('Writing file...')
-writehtk_lite(strcat(filename(1:end-4),'.mfcc'), F.', fSDur*1E-3, 9);
+writehtk_lite(strcat(filename(1:end-4),'.mfcc'), F.', fSDur*1E-3, 9); % USER
 %mfccfile = writemfcc(F,filename, fSize); % write feature vectors to .mfcc file  
 disp(strcat(filename, ' extracted.'));
 
@@ -63,8 +63,8 @@ end
 
 function ps = spectral(frame)
 % This function returns a 257 point 
-% 1 sided estimated power spectral
-% density of a column vector
+% 1 sided power spectral density
+% estimate of a column vector
 dft = fft(frame,512); % 512 point DFT of frames
 p = abs(dft).^2;      % periodogram of DFT
 ps = p(1:257);        % 1 sided power spectrum is first 257 coefficients

@@ -3,7 +3,7 @@ $word = adrian | ali | andrew | andy | ce
 | minghong | nicholas | nicole | oliver | sarah
 | shaun | travis | vincent | vinny ;
 
-( [sil] < $word >  [sil])
+( [sil] < $word [sil] >  )
 
 
 

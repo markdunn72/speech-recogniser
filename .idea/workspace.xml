@@ -43,49 +43,53 @@
       <change beforePath="$PROJECT_DIR$/ASR/MFCCs/train/travis.mfcc" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/MFCCs/train/travis.mfcc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ASR/MFCCs/train/vincent.mfcc" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/MFCCs/train/vincent.mfcc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ASR/MFCCs/train/vinny.mfcc" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/MFCCs/train/vinny.mfcc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ASR/labels/test/adrian.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/test/adrian.lab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ASR/labels/test/ali.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/test/ali.lab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ASR/labels/test/andrew.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/test/andrew.lab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ASR/labels/test/andy.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/test/andy.lab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ASR/labels/test/ce.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/test/ce.lab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ASR/labels/test/chaorong.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/test/chaorong.lab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ASR/labels/test/jeremy.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/test/jeremy.lab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ASR/labels/test/ke.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/test/ke.lab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ASR/labels/test/liam.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/test/liam.lab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ASR/labels/test/martinho.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/test/martinho.lab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ASR/labels/test/mateusz.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/test/mateusz.lab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ASR/labels/test/minghong.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/test/minghong.lab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ASR/labels/test/nicholas.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/test/nicholas.lab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ASR/labels/test/nicole.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/test/nicole.lab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ASR/labels/test/oliver.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/test/oliver.lab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ASR/labels/test/sarah.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/test/sarah.lab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ASR/labels/test/shaun.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/test/shaun.lab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ASR/labels/test/travis.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/test/travis.lab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ASR/labels/test/vincent.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/test/vincent.lab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ASR/labels/test/vinny.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/test/vinny.lab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ASR/labels/train/adrian.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/train/adrian.lab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ASR/labels/train/ali.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/train/ali.lab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ASR/labels/train/andrew.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/train/andrew.lab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ASR/labels/train/andy.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/train/andy.lab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ASR/labels/train/ce.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/train/ce.lab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ASR/labels/train/chaorong.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/train/chaorong.lab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ASR/labels/train/jeremy.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/train/jeremy.lab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ASR/labels/train/ke.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/train/ke.lab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ASR/labels/train/liam.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/train/liam.lab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ASR/labels/train/martinho.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/train/martinho.lab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ASR/labels/train/mateusz.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/train/mateusz.lab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ASR/labels/train/minghong.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/train/minghong.lab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ASR/labels/train/nicholas.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/train/nicholas.lab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ASR/labels/train/nicole.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/train/nicole.lab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ASR/labels/train/oliver.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/train/oliver.lab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ASR/labels/train/sarah.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/train/sarah.lab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ASR/labels/train/shaun.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/train/shaun.lab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ASR/labels/train/travis.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/train/travis.lab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ASR/labels/train/vincent.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/train/vincent.lab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ASR/labels/train/vinny.lab" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/labels/train/vinny.lab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ASR/lists/testList.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/lists/testList.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ASR/lists/trainList.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/lists/trainList.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build_asr.py" beforeDir="false" afterPath="$PROJECT_DIR$/build_asr.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/hmms/adrian" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/hmms/ali" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/hmms/andrew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/hmms/andy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/hmms/ce" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/hmms/chaorong" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/hmms/jeremy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/hmms/ke" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/hmms/liam" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/hmms/martinho" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/hmms/mateusz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/hmms/minghong" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/hmms/nicholas" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/hmms/nicole" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/hmms/oliver" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/hmms/sarah" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/hmms/shaun" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/hmms/sil" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/hmms/travis" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/hmms/vincent" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/hmms/vinny" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/lib/GRAM" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/lib/GRAM" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/lib/NET" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/lib/NET" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/lib/proto4States.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ASR/lib/proto4States.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/results/adrian.rec" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/results/ali.rec" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/results/andrew.rec" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/results/andy.rec" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/results/ce.rec" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/results/chaorong.rec" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/results/jeremy.rec" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/results/ke.rec" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/results/liam.rec" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/results/martinho.rec" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/results/mateusz.rec" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/results/minghong.rec" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/results/nicholas.rec" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/results/nicole.rec" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/results/oliver.rec" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/results/sarah.rec" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/results/shaun.rec" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/results/travis.rec" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/results/vincent.rec" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR/results/vinny.rec" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/config/GRAM" beforeDir="false" afterPath="$PROJECT_DIR$/data/config/GRAM" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/config/NET" beforeDir="false" afterPath="$PROJECT_DIR$/data/config/NET" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/config/proto4States.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/config/proto4States.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/test/recordings/ADRIAN/adrian.mfcc" beforeDir="false" afterPath="$PROJECT_DIR$/data/test/recordings/ADRIAN/adrian.mfcc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/test/recordings/ALI/ali.mfcc" beforeDir="false" afterPath="$PROJECT_DIR$/data/test/recordings/ALI/ali.mfcc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/test/recordings/ANDREW/andrew.mfcc" beforeDir="false" afterPath="$PROJECT_DIR$/data/test/recordings/ANDREW/andrew.mfcc" afterDir="false" />
@@ -126,8 +130,6 @@
       <change beforePath="$PROJECT_DIR$/data/train/recordings/TRAVIS/travis.mfcc" beforeDir="false" afterPath="$PROJECT_DIR$/data/train/recordings/TRAVIS/travis.mfcc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/train/recordings/VINCENT/vincent.mfcc" beforeDir="false" afterPath="$PROJECT_DIR$/data/train/recordings/VINCENT/vincent.mfcc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/train/recordings/VINNY/vinny.mfcc" beforeDir="false" afterPath="$PROJECT_DIR$/data/train/recordings/VINNY/vinny.mfcc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extractall.m" beforeDir="false" afterPath="$PROJECT_DIR$/extractall.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hinit_all.sh" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/mfccextract.m" beforeDir="false" afterPath="$PROJECT_DIR$/mfccextract.m" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -140,7 +142,7 @@
     <session id="189214656">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="4" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.6" value="1" />
@@ -180,8 +182,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/build_asr.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="96" column="29" lean-forward="true" selection-start-line="96" selection-start-column="29" selection-end-line="96" selection-end-column="29" />
+            <state relative-caret-position="467">
+              <caret line="96" column="29" selection-start-line="96" selection-start-column="29" selection-end-line="96" selection-end-column="29" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -315,12 +317,12 @@
     <frame x="0" y="23" width="1280" height="711" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2494043" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2494043" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2374798" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.2374798" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3990307" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -351,8 +353,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/build_asr.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="96" column="29" lean-forward="true" selection-start-line="96" selection-start-column="29" selection-end-line="96" selection-end-column="29" />
+        <state relative-caret-position="467">
+          <caret line="96" column="29" selection-start-line="96" selection-start-column="29" selection-end-line="96" selection-end-column="29" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
