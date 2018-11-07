@@ -48,9 +48,9 @@ end
 % ---------------------------------- %
 
 disp('Writing file...')
-
 writehtk_lite(strcat(filename(1:end-4),'.mfcc'), F.', fSDur*1E-3, 9);
-%mfccfile = writemfcc(F,filename, fSize); % write feature vectors to .mfcc file   
+%mfccfile = writemfcc(F,filename, fSize); % write feature vectors to .mfcc file  
+disp(strcat(filename, ' extracted.'));
 
 end
 
