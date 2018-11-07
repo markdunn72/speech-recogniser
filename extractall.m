@@ -1,4 +1,4 @@
-function extracted = extractall(fDir)
+function [extracted, size] = extractall(fDir)
 % This function runs mfccextract on all wav files
 % in directories within fDir
 % returns true if any wav file found else false
@@ -19,7 +19,7 @@ for k = 3:length(D)
             disp('Extracting features from:');
             f = fList(x).name;
             disp(f);
-            mfccextract(f);
+            size = mfccextract(f);
             extracted = true;
         end
         cd('..');    

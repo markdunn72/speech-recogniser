@@ -1,5 +1,6 @@
 import os
 import shutil
+import subprocess
 
 
 # config
@@ -27,7 +28,6 @@ GRAM = '''
 CONFIG_DATA = 'data/config/'
 TRAIN_DATA = 'data/train/recordings'
 TEST_DATA = 'data/test/recordings'
-
 
 
 # build new directory tree
@@ -71,13 +71,11 @@ f = open(DIRS['LISTS'] + '/testList.txt', 'w+')
 [f.write(file + '\n') for file in testlist]
 f.close()
 
-# copy hmm prototype file
-proto = 'proto4States.txt'
-shutil.copyfile(CONFIG_DATA + proto, DIRS['LIB'] + '/' + proto)
-
-# copy hinit shell command
+# copy hinit and hmmprototype shell command
 hinitsh = 'hinit_all.sh'
+proto = 'hmmprototype.txt'
 shutil.copyfile(CONFIG_DATA + hinitsh, DIRS['ASR'] + '/' + hinitsh)
+shutil.copyfile(CONFIG_DATA + proto, DIRS['LIB'] + '/' + proto)
 
 # copy GRAM, NET, dict, words4, words3, wdnet
 files = ['GRAM', 'NET', 'dict', 'words4', 'words3', 'wdnet']

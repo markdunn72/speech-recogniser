@@ -1,4 +1,4 @@
-function mfccextract(filename)
+function size = mfccextract(filename)
 % parameters: filename of input audio file 
 % returns:    MFCC file
 
@@ -6,11 +6,16 @@ function mfccextract(filename)
 ySize = length(y);            % get length of signal
 
 % --------- Configuration ---------- %
-disp('Analyzing signal...')
 fDur = 60;                % frame duration (ms)
 fSDur = 36;               % frame step     (ms)
+S = 512;                  % # of filterbank frequency bins (^2)
+M = 26;                   % # of output frequency bins
+% - - - - - - - - - - - - - - - - -  %
+disp('Analyzing signal...')
 fSize = (Fs/1000)*fDur;   % frame length
 fStep = (Fs/1000)*fSDur;  % frame step length
+K = S/2+1;                % filter vector length
+MT = floor(M*0.6);        % # of quefrency bins after cepstral truncation
 fN = 1;                   % max # of frames in signal
 i = 1;      
 while i+fSize-1 <= ySize
@@ -23,8 +28,6 @@ fN = fN-1;
 % ------ Mel-scale filterbank ------ %
 hz2mel = @(hz)(1125*log(1+hz/700));     % Hertz to mel warping
 mel2hz = @(mel)(700*exp(mel/1125)-700); % mel to Hertz warping
-K = 257;                                % length of each filter vector
-M = 26;                                 % number of filters - SET HERE
 [FB,~] = trifbank(M,K,[0 Fs/2],Fs,hz2mel,mel2hz);
 % ---------------------------------- %
 
@@ -32,18 +35,18 @@ M = 26;                                 % number of filters - SET HERE
 disp('Processing signal...')
 y = preemphasis(y);                % apply preemphasis to signal
 
-F = zeros(12,fN);                  % matrix F for MFCC feature vectors
+F = zeros(MT,fN);                  % matrix F for MFCC feature vectors
 i = 1;                             % signal start index
 
 for f = 1:fN                       % for each frame
-    iEnd = i+fSize-1;              % get end index
-    ps = spectral(y(i:iEnd));      % get spectral domain  
-    ev = filterbank(ps,FB,M);      % get energy vector from filterbank      
+    iEnd = i+fSize-1;              % get signal end index
+    ps = spectral(y(i:iEnd),S,K);  % get spectral domain  
+    ev = filterbank(ps,FB,M,K);    % get energy vector from filterbank      
     ev = log(ev);                  % take log of each filter energy    
-    fv = cepstral(ev);             % get cepstral coefficients
+    fv = cepstral(ev,MT);          % get cepstral coefficients
     %fve = loge(fv);                % add log energy component
-    F(:,f) = fv;                   % store feature vector
-    i = i+fStep;                   % step signal start index
+    F(:,f) = fv;                  % store feature vector
+    i = i+fStep;                   % get next signal start index
 end
 % ---------------------------------- %
 
@@ -51,6 +54,8 @@ disp('Writing file...')
 writehtk_lite(strcat(filename(1:end-4),'.mfcc'), F.', fSDur*1E-3, 9); % USER
 %mfccfile = writemfcc(F,filename, fSize); % write feature vectors to .mfcc file  
 disp(strcat(filename, ' extracted.'));
+
+size = MT;
 
 end
 
@@ -61,23 +66,23 @@ b = [1 -0.95];
 sigout = filter(b,1,y);       % high-pass filter
 end
 
-function ps = spectral(frame)
+function ps = spectral(frame,S,K)
 % This function returns a 257 point 
 % 1 sided power spectral density
 % estimate of a column vector
-dft = fft(frame,512); % 512 point DFT of frames
-p = abs(dft).^2;      % periodogram of DFT
-ps = p(1:257);        % 1 sided power spectrum is first 257 coefficients
+dft = fft(frame,S); % S point DFT of frames
+p = abs(dft).^2;    % periodogram of DFT
+ps = p(1:K);        % 1 sided power spectrum
 end
 
-function ev = filterbank(ps,H,M)
+function ev = filterbank(ps,H,M,K)
 % H = filterbank matrix
 % M = number of filters
 ev = zeros(M,1);         % energy vector ev
 for filter = 1:M
     fi = H(filter,:).';  % get filter vector
-    fiev = zeros(257,1); % stores energy coefficients of ps for each filter
-    for x = 1:257
+    fiev = zeros(K,1);   % stores energy coefficients of ps for each filter
+    for x = 1:K
         fiev(x) = (ps(x)*fi(x)); % calculate filter energy
     end
     fie = sum(fiev);     % take sum of coefficients
@@ -85,12 +90,12 @@ for filter = 1:M
 end
 end
 
-function fv = cepstral(ev)
+function fv = cepstral(ev,MT)
 % This function takes the discrete cosine transform
 % of an energy vector and removes the pitch-related
 % quefrencies with truncation
-ev = fft(ev);  % take DCT of ev to get cepstral domain
-fv = ev(1:12); % take first 12 points to get MFCC feature vector
+ev = dct(ev);  % take DCT of ev to get cepstral domain
+fv = ev(1:MT); % truncate
 end
 
 function fve = loge(fv)
@@ -103,7 +108,7 @@ fve = zeros(N+1,1);
 for i = 1:N
     fve(i) = fv(i);
 end
-fve(N+1) = lec;   % append energy components
+fve(N+1) = lec;   % append energy component
 end
 
     
@@ -206,32 +211,6 @@ function [ H, f, c ] = trifbank( M, K, R, fs, h2w, w2h )
 
     % H = H./repmat(max(H,[],2),1,K);  % normalize to unit height
     % H = H./repmat(trapz(f,H,2),1,K); % normalize to unit area (inherently done)
-end
-
-
-function mfccfile = writemfcc(J,filename,fSize)
-% This function writes a matrix of MFCC feature vectors
-% to the HTK file format .mfcc
-mfccfile = strcat(filename(1:end-4),'.mfcc'); % create new filename
-[vecDims,nSamples] = size(J);
-sampPeriod = (fSize/2)*10000; % convert ms to 100ns
-parmKind = 6;                 % sample kind is MFCC
-sampSize = 4*vecDims;         % 12 4-byte float values 
-% Open file for writing:
-fid = fopen(mfccfile, 'w', 'ieee-be');
-% Write the header information
-fwrite(fid,nSamples,'int32');   % number of vectors in file (4 byteint)
-fwrite(fid,sampPeriod,'int32'); % sample period in 100ns units (4 byte int)
-fwrite(fid,sampSize,'int16');   % number of bytes per sample (2 byte int)
-fwrite(fid,parmKind,'int16');   % code for the sample kind (2 byte int)
-% Write the data: one coefficient at a time:
-for i = 1:nSamples     
-   for j = 1:vecDims    
-     fwrite(fid, J(j, i), 'float32');    
-   end
-end
-% close the file
-fclose(fid);
 end
 
 function writehtk_lite( filename, features, sampPeriod, parmKind )
